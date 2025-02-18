@@ -1,0 +1,193 @@
+@use '../utilities' as *;
+
+.profile {
+    $root: &;
+    display: grid;
+    place-items: start;
+    min-height: 100vh;
+
+    @include breakpoint('md') {
+        margin-right: 4rem;
+        place-items: center;
+    }
+
+    @include breakpoint('xlg') {
+        margin-right: 0;
+    }
+
+    &__container {
+        display: grid;
+        gap: 2rem;
+        width: 100%;
+        max-width: 50rem;
+        padding: clamp(1.5rem, 1.024rem + 2.03vw, 2rem);
+        border: 1px solid hsl(var(--c-blue-grayish));
+        border-radius: 20px;
+        background-color: hsl(var(--c-blue-dark-semi));
+        box-shadow: 0px 0px 111px -23px hsl(var(--c-blue-light)/0.6);
+        z-index: 1;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+
+        span {
+            position: relative;
+
+            &.shimmer {
+                &::before {
+                    @extend %shimmer-effect;
+                    position: absolute;
+                    content: '';
+                    inset: 0;
+                }
+            }
+        }
+    }
+
+    &__avatar-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        &:has(:focus-within) {
+            #{$root}__avatar-wrapper {
+                outline: 3px dashed hsl(var(--c-red));
+            }
+        }
+    }
+
+    &__avatar-wrapper {
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        outline: 2px dashed hsl(var(--c-blue-grayish));
+        cursor: pointer;
+
+        
+        &.shimmer {
+            &::before {
+                @extend %shimmer-effect;
+                position: absolute;
+                content: '';
+                inset: 0;
+            }
+        }
+    }
+    
+    &__avatar-image {
+        width: clamp(80px, 0.836rem + 17.766vw, 150px);
+        height: clamp(80px, 0.836rem + 17.766vw, 150px);
+        object-fit: cover;
+    }
+
+    &__avatar-label-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+    }
+
+    &__avatar-label-desc {
+        font-style: italic;
+
+        &.has-error {
+            color: hsl(var(--c-red));
+        }
+    }
+
+    &__form {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    &__input-wrapper {
+        position: relative;
+        display: grid;
+        position: relative;
+        gap: 0.2rem;
+        border: 1px solid hsl(var(--c-blue-grayish)/0.5);
+        border-radius: 10px;
+        
+        &:has(:focus-within) {
+            border: 1px solid hsl(var(--c-white));
+        }
+
+        &.shimmer {
+            &::after {
+                @extend %shimmer-effect;
+                position: absolute;
+                content: '';
+                inset: -10px -1px -1px -1px;
+            }
+        }
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: -0.5rem;
+        left: 0.46rem;
+        background-color: hsl(var(--c-blue-dark-semi));
+        padding-inline: 0.2rem;
+
+        &::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 0.3rem;
+        }
+
+        &--user {
+            &::before {
+                content: "\f007";
+            }
+        }
+
+        &--email {
+            &::before {
+                content: "\f0e0";
+            }
+        }
+
+        &--password {
+            &::before {
+                content: "\f023";
+            }
+        }
+    }
+
+    &__input {
+        background-color: transparent;
+        border: none;
+        caret-color: hsl(var(--c-red));
+        padding: 0.66rem;
+        padding-left: 0.6rem;
+
+        &:focus {
+            outline: none;
+        }
+        
+        &::placeholder {
+            color: hsl(var(--c-blue-grayish));
+        }
+    }
+
+    &__error {
+        display: none;
+        
+        &.has-error {
+            display: grid;
+            gap: 0.25rem;
+        }
+
+        &.has-success {
+            display: grid;
+            gap: 0.25rem;
+            color: hsl(var(--c-green));
+        }
+    }
+}

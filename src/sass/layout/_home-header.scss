@@ -1,0 +1,24 @@
+@use '../utilities' as *;
+
+.home-header {
+    $root: &;
+    position: absolute;
+    width: 100%;
+    top: clamp(1.5rem, 0.548rem + 4.061vw, 2.5rem);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo-cta {
+        &:focus-visible {
+            @extend %focus-visible;
+        }
+    }
+
+    &__logo {
+        width: 60px;
+    }
+}

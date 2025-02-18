@@ -1,0 +1,38 @@
+@use '../utilities' as *;
+
+.app {
+    $root: &;
+
+    @include breakpoint('md') {
+        padding-left: 2.5rem;
+    }
+
+    &__wrapper {
+        display: grid;
+        gap: 2.25rem;
+
+        @include breakpoint('md') {
+            grid-template-columns: max-content 1fr;
+            min-height: 100vh;
+        }
+    }
+
+    &__main {
+        overflow: hidden;
+        max-width: 120rem;
+        padding-inline: clamp(1rem, -0.428rem + 6.091vw, 2.5rem);
+
+        @include breakpoint('md') {
+            padding-right: 0;
+        }
+    }
+
+    &__search {
+        margin-bottom: 1.25rem;
+
+        @include breakpoint('md') {
+            margin-top: 3.8rem;
+            margin-right: 1.2rem;
+        }
+    }
+}
