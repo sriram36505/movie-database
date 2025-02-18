@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/favicon-32x32.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b961f1cbcd.js" crossorigin="anonymous"></script>
+    <title>MovieDB - Discover movies, TV shows and more</title>
+  </head>
+  <body>
+    <div class="overlay" data-overlay></div>
+    <header class="home-header">
+      <div class="home-header__container container">
+        <a href="/index.html" class="home-header__logo-cta" aria-label="MovieDB - Home Page">
+          <img src="/assets/logo.svg" alt="" class="home-header__logo">
+        </a>
+        <a href="/access/login.html" class="home-header__signin cta-signin-sm fs-400 text-dc-none text-white" data-login-cta>Sign In</a>
+      </div>
+    </header>
+    <main>
+      <section class="home-hero">
+        <div class="home-hero__container container">
+          <h1 class="home-hero__title fs-800 ls-500 lh-600 fw-700 text-white">Millions of movies, binge-worthy series and TV shows to discover. Explore now.</h1>
+          <p class="home-hero__desc fs-500 fw-300 text-white">Ready to explore? Enter your email to create your account.</p>
+          <form class="home-hero__signup-form" data-home-signup novalidate>
+            <div class="home-hero__input-wrapper">
+              <label class="sr-only" for="email">Email address</label>
+              <input class="home-hero__input fs-400" type="email" name="email" id="email" placeholder="Email address">
+              <button class="home-hero__cta cta-start fs-400 text-dc-none text-white" type="submit">Get Started</button>
+            </div>
+            <p class="home-hero__error fs-300 fw-300 text-red" aria-hidden="true" aria-live="polite" data-form-message>error message</p>
+          </form>
+        </div>
+        <div class="home-hero__separator separator"></div>
+      </section>
+      <section class="trailers">
+        <div class="trailers__wrapper" data-trailers-wrapper>
+          <div class="trailers__wrapper-gradient">
+            <div class="trailers__container container">
+              <h2 class="trailers__title fs-700 fw-500 text-white">Latest Trailers</h2>
+              <p class="trailers__desc fs-500 fw-300 text-white">Get ready for the ultimate cinematic experience, <br>and explore latest trailers of the most anticipated movies!</p>
+              <div class="trailers__list-wrapper swiper" data-trailers-swiper>
+                <ul class="trailers__list swiper-wrapper" data-trailers-list></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="trailers__separator separator"></div>
+      </section>
+      <section class="home-devices">
+        <div class="home-devices__container container">
+          <h2 class="home-devices__title fs-700 fw-500 text-white">Watch everywhere</h2>
+          <p class="home-devices__desc fs-500 fw-300 text-white">Discover unlimited movies and TV shows<br>and watch it on your phone, tablet, laptop, and TV.</p>
+          <div class="home-devices__mockup-wrapper">
+            <img class="home-devices__mockup" src="/assets/home-devices-mockup.png" alt="">
+            <div class="home-devices__mockup-video-wrapper">
+              <video class="home-devices__mockup-video" src="/assets/mockup-video.mp4" autoplay="" playsinline="" muted="" loop=""></video>
+            </div>
+          </div>
+        </div>
+        <div class="home-devices__separator separator"></div>
+      </section>
+    </main>
+    <div class="lightbox" data-lightbox role="dialog" aria-label="Trailer video modal"></div>
+    <footer class="footer">
+      <div class="footer__container container">
+        <a href="/index.html" class="footer__logo-cta" aria-label="MovieDB - Home Page">
+          <img src="/assets/logo.svg" alt="" class="footer__logo"></a>
+        <div class="footer__info">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="#" class="footer__socials-link" aria-label="Discord">
+                <i class="fa-brands fa-discord"></i>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__socials-link" aria-label="Facebook">
+                <i class="fa-brands fa-square-facebook"></i>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__socials-link" aria-label="Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__socials-link" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+          <p class="footer__copy fs-300 text-white50">Copyright 2024. All Rights Reserved</p>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
