@@ -1,0 +1,118 @@
+@use '../utilities' as *;
+
+.cta-signin-sm {
+    background-color: hsl(var(--c-red));
+    border-radius: 6px;
+    padding-block: 0.5rem;
+    padding-inline: 2rem;
+
+    &:focus-visible {
+        @extend %focus-visible;
+    }
+
+    @include breakpoint('md') {
+        transition: background-color 350ms ease-in-out;
+
+        &:hover {
+            background-color: hsl(var(--c-red-dark));
+        }
+    }
+}
+
+.cta-start {
+    background-color: hsl(var(--c-red));
+    border-radius: 8px;
+    padding-block: 0.85rem;
+    padding-inline: 2rem;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    &:focus-visible {
+        background-color: hsl(var(--c-red-dark));
+        font-weight: 600;
+    }
+    
+    @include breakpoint('sm') {
+        border-radius: 0 8px 8px 0;
+    }
+
+    @include breakpoint('md') {
+        transition: background-color 350ms ease-in-out,
+                    font-weight 350ms ease-in-out;
+
+        &:hover {
+            background-color: hsl(var(--c-red-dark));
+        }
+    }
+}
+
+.cta-access {
+    padding: 1rem;
+    background-color: hsl(var(--c-red));
+    color: hsl(var(--c-white));
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:focus-visible {
+        @extend %focus-visible;
+        background-color: hsl(var(--c-white));
+        color: hsl(var(--c-blue-dark));
+    }
+
+    @include breakpoint('md') {
+        transition: background-color 350ms ease-in-out,
+                    color 350ms ease-in-out;
+
+        &:hover {
+            background-color: hsl(var(--c-white));
+            color: hsl(var(--c-blue-dark));
+        }
+    }
+}
+
+.bookmark-cta {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: hsl(var(--c-blue-dark) / 0.5);
+    border: none;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+    transition: color 350ms ease-in-out,
+                background-color 350ms ease-in-out;
+
+    &:hover {
+        color: hsl(var(--c-blue-dark));
+        background-color: hsl(var(--c-white));
+    }
+
+    &:focus-visible {
+        outline: none;
+        color: hsl(var(--c-blue-dark));
+        background-color: hsl(var(--c-white));
+    }
+
+    &::before {
+        content: '\f02e';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 400;
+    }
+
+    &[data-bookmarked] {
+        &::before {
+            font-weight: 900;
+        }
+    }
+}
